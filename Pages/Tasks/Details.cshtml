@@ -1,0 +1,42 @@
+@page
+@model wt_lab5_5razor_liseychikov.Pages.Tasks.EditModel
+@{
+    ViewData["Title"] = "Редактировать задачу";
+}
+
+<div class="container mt-4">
+    <h1 class="mb-4">Редактирование задачи</h1>
+
+    <div class="card shadow rounded p-4" style="max-width: 600px;">
+        <form method="post">
+            <input type="hidden" asp-for="Task.Id" />
+            <div asp-validation-summary="ModelOnly" class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="Task.Name" class="form-label">Название</label>
+                <input asp-for="Task.Name" class="form-control" />
+                <span asp-validation-for="Task.Name" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Task.Category" class="form-label">Категория</label>
+                <input asp-for="Task.Category" class="form-control" />
+                <span asp-validation-for="Task.Category" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Task.Price" class="form-label">Цена</label>
+                <input asp-for="Task.Price" class="form-control" type="number" />
+                <span asp-validation-for="Task.Price" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3 form-check">
+                <input asp-for="Task.IsAvaliable" class="form-check-input" type="checkbox" />
+                <label asp-for="Task.IsAvaliable" class="form-check-label">Доступна</label>
+            </div>
+
+            <button type="submit" class="btn btn-primary">Сохранить</button>
+            <a asp-page="Index" class="btn btn-secondary">Назад к списку</a>
+        </form>
+    </div>
+</div>
