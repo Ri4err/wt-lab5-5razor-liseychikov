@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("wt-lab5-5razor-liseychikov")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b054e967ce2642b47dee9c51aa52137e70a62671")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+713462ed4e12189d97a194b5c511ba4972c2085a")]
 [assembly: System.Reflection.AssemblyProductAttribute("wt-lab5-5razor-liseychikov")]
 [assembly: System.Reflection.AssemblyTitleAttribute("wt-lab5-5razor-liseychikov")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
