@@ -5,26 +5,29 @@
 }
 
 <div class="container mt-4">
-    <h1 class="mb-4">Каталог задач проекта</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1>Каталог задач проекта</h1>
+        <a asp-page="Create" class="btn btn-primary shadow-sm">Добавить задачу</a>
+    </div>
 
     <div class="row">
         @foreach (var task in Model.Tasks)
         {
             <div class="col-12 col-md-6 col-lg-4 mb-4">
-                <div class="card shadow rounded h-100">
+                <div class="card shadow rounded h-100 border-0">
                     <div class="card-body d-flex flex-column">
                         <div class="d-flex justify-content-between align-items-center mb-2">
                             <span class="badge bg-primary">#@task.Id</span>
                             <span class="badge bg-secondary">@task.Category</span>
                         </div>
                         
-                        <h5 class="card-title">@task.Name</h5>
+                        <h5 class="card-title fw-bold">@task.Name</h5>
                         
-                        <p class="card-text text-muted mb-4">
+                        <p class="card-text text-muted mb-3">
                             Стоимость: <strong>@task.Price руб.</strong>
                         </p>
 
-                        <div class="mt-auto d-flex justify-content-between align-items-center">
+                        <div class="mb-3">
                             @if (task.IsAvaliable)
                             {
                                 <span class="badge bg-success">Доступна</span>
@@ -33,8 +36,15 @@
                             {
                                 <span class="badge bg-danger">Недоступна</span>
                             }
-                            
-                            <a href="#" class="btn btn-outline-primary btn-sm">Подробнее</a>
+                        </div>
+
+                        <div class="mt-auto d-flex justify-content-between align-items-center pt-2 border-top">
+                            <a asp-page="Details" asp-route-id="@task.Id" class="btn btn-outline-secondary btn-sm">
+                                Подробнее
+                            </a>
+                            <a asp-page="Edit" asp-route-id="@task.Id" class="btn btn-outline-primary btn-sm">
+                                Редактировать
+                            </a>
                         </div>
                     </div>
                 </div>
